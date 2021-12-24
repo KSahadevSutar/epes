@@ -2,7 +2,7 @@
     <div class="dropdown">
     <a href="./" class="brand-link" style="background-color: white;">
         <?php if($_SESSION['login_type'] == 2): ?>
-          <img src="./assets//Mouritech-R-Logo.png" alt="MOURI Tech" class="dark-logo" style="width: 200px;padding-left: 20px;">
+          <img src="./assets/Mouritech-R-Logo.png" alt="MOURI Tech" class="dark-logo" style="width: 200px;padding-left: 20px;">
         <?php elseif($_SESSION['login_type'] == 1): ?>
         <h3 class="text-center p-0 m-0"><b>Evaluator</b></h3>
          <?php else: ?>

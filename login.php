@@ -20,13 +20,14 @@ header("location:index.php?page=home");
 ?>
 <?php include 'header.php' ?>
 <body class="hold-transition login-page bg-black">
-  <h2><b><?php echo $_SESSION['system']['name'] ?> - Admin</b></h2>
+  
 <div class="login-box">
-  <div class="login-logo">
-    <a href="#" class="text-white"></a>
-  </div>
+  
   <!-- /.login-logo -->
   <div class="card">
+  <div class="login-logo">
+  <h2><img src="./assets/Mouritech-R-Logo.png" alt="MOURI Tech" class="dark-logo" style="width: 200px;padding-top: 25px;"></h2>
+  </div>
     <div class="card-body login-card-body">
       <form action="" id="login-form">
         <div class="input-group mb-3">
