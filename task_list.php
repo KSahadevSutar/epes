@@ -2,7 +2,7 @@
 <div class="col-lg-12">
 	<div class="card card-outline card-success">
 		<div class="card-header">
-			<?php if($_SESSION['login_type'] == 2): ?>
+			<?php if($_SESSION['login_type'] == 1 || $_SESSION['login_type'] == 2): ?>
 			<div class="card-tools">
 				<button class="btn btn-block btn-sm btn-default btn-flat border-primary" id="new_task"><i class="fa fa-plus"></i> Add New Task</button>
 			</div>
