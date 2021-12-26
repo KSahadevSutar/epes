@@ -507,9 +507,9 @@ Class Action {
 	function get_emp_tasks(){
 		extract($_POST);
 		if(!isset($task_id))
-		$get = $this->db->query("SELECT * FROM task_list where employee_id = $employee_id and status = 2 and id not in (SELECT task_id FROM ratings) ");
+		$get = $this->db->query("SELECT * FROM task_list where employee_id = $employee_id and id not in (SELECT task_id FROM ratings) ");
 		else
-		$get = $this->db->query("SELECT * FROM task_list where employee_id = $employee_id and status = 2 and id not in (SELECT task_id FROM ratings where task_id !='$task_id') ");
+		$get = $this->db->query("SELECT * FROM task_list where employee_id = $employee_id and id not in (SELECT task_id FROM ratings where task_id !='$task_id') ");
 		$data = array();
 		while($row=$get->fetch_assoc()){
 			$data[] = $row;
