@@ -51,7 +51,7 @@
 				</div>
 				<hr>
 				<div class="col-lg-12 text-right justify-content-center d-flex">
-					<button class="btn btn-primary mr-2">Save</button>
+					<button type="submit" class="btn btn-primary mr-2">Save</button>
 					<button class="btn btn-secondary" type="button" onclick="location.href = 'index.php?page=evaluator_list'">Cancel</button>
 				</div>
 			</form>
@@ -104,14 +104,14 @@
 				}
 			}
 		}
+		var data = new FormData($(this)[0]);
+		$.each($('#cimg')[0].files, function(i, file) {
+			data.append('file-'+i, file);
+		});
 		$.ajax({
 			url:'ajax.php?action=save_evaluator',
-			data: new FormData($(this)[0]),
-		    cache: false,
-		    contentType: false,
-		    processData: false,
-		    method: 'POST',
-		    type: 'POST',
+			method:'POST',
+			data:$(this).serialize(),
 			success:function(resp){
 				if(resp == 1){
 					alert_toast('Data successfully saved.',"success");

@@ -162,6 +162,7 @@
 		update_emp()
 	})
 	function update_emp(){
+		console.log("################");
 		start_load();
  		$('#task_id').html('')
 		$.ajax({
@@ -181,13 +182,15 @@
 					 		var oc = opt.clone()
 					 		$('#task_id').append(oc)
 					 	Object.keys(resp).map(k=>{
-					 		var oc = opt.clone()
-					 		oc.text(resp[k].task)
-					 		oc.attr('value',resp[k].id)
-							var task_id ='<?php echo isset($task_id) ? $task_id : ''; ?>' ;
-							if(task_id == resp[k].id)
-								oc.attr('selected',true)
-					 		$('#task_id').append(oc)
+							if(resp[k].status == 2) {
+								var oc = opt.clone()
+								oc.text(resp[k].task)
+								oc.attr('value',resp[k].id)
+								var task_id ='<?php echo isset($task_id) ? $task_id : ''; ?>' ;
+								if(task_id == resp[k].id)
+									oc.attr('selected',true)
+								$('#task_id').append(oc)
+							 }
 					 	})
 					 }else{
 					 		$('#task_id').html('')
